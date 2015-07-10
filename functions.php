@@ -1,5 +1,5 @@
 <?php
-	
+
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'custom-header' );
@@ -17,6 +17,12 @@ function webbird_load_editor_style() {
 add_action('after_setup_theme', 'webbird_theme_setup');
 function webbird_theme_setup(){
     load_theme_textdomain('derioolkrak', get_template_directory() . '/languages');
+}
+
+add_action('init', 'wb_load_acf_fields');
+
+function wb_load_acf_fields(){
+	include 'assets/acf/acf.php';
 }
 
 function webbird_show_full_tinymce( $args ) {
@@ -74,7 +80,7 @@ if( !$menu_footer_copyrights_exists) {
 $menu_footer_copyrights_id = wp_create_nav_menu( $menu_footer_copyrights );
 }
 
-register_nav_menus( 
+register_nav_menus(
 	array (
 		'header-mnav' => 'Header - Main navigation',
 		'header-fnav' => 'Header - Functional navigation',
@@ -120,16 +126,16 @@ add_action('wp_enqueue_scripts' , 'webbird_scripts');
 
 function webbird_scripts() {
 	wp_enqueue_script('jquery');
-	
+
 	wp_register_style( 'webbird-styles' , get_template_directory_uri() . '/css/styles.css');
 	wp_enqueue_style( 'webbird-styles' );
-		
+
 	wp_register_style( 'fontawesome' , get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'fontawesome' );
-	
+
 	wp_register_script( 'flexslider' , get_template_directory_uri() . '/js/jquery.flexslider.js' );
 	wp_enqueue_script( 'flexslider' );
-	
+
 	wp_register_script( 'black-and-white-images' , get_template_directory_uri() . '/js/jquery.BlackAndWhite.min.js' );
 	wp_enqueue_script( 'black-and-white-images' );
 }
@@ -246,7 +252,7 @@ add_action( 'widgets_init', 'webbird_sidebar_blog_sidebar1' );
 
 
 if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> __('Theme Settings', 'eagle'),
 		'menu_title'	=> __('Theme Settings', 'eagle'),
@@ -256,43 +262,43 @@ if( function_exists('acf_add_options_page') ) {
 		'position'		=> '90',
 		'redirect'		=> false
 	));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Header Settings', 'eagle'),
 		'menu_title'	=> __('Header Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Contact Settings', 'eagle'),
 		'menu_title'	=> __('Contact Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Agency Settings', 'eagle'),
 		'menu_title'	=> __('Agency Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Footer Settings', 'eagle'),
 		'menu_title'	=> __('Footer Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-		
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Social Media Settings', 'eagle'),
 		'menu_title'	=> __('Social Media Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> __('Google Settings', 'eagle'),
 		'menu_title'	=> __('Google Settings', 'eagle'),
 		'parent_slug'	=> 'theme-settings',
 	));
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> __('Theme Plugins', 'eagle'),
 		'menu_title'	=> __('Theme Plugins', 'eagle'),
@@ -305,7 +311,7 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 add_action( 'activity_box_end', 'activity_box_end_example' );
- 
+
 function activity_box_end_example() {
    _e( "If you have any questions, you can reach WebBird's support at" );
    echo '&nbsp;<a href="mailto:support@webbird.be">support@webbird.be</a>.';
