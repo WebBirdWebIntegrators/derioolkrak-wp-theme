@@ -2334,9 +2334,6 @@ iframe {
     margin: 0px;
   }
 }
-body.login div#login h1 a {
-  background-image: url("/wp-content/themes/nickoservice//img/wp-login.png");
-}
 #wpadminbar {
   position: fixed;
 }
@@ -2663,6 +2660,9 @@ body.login div#login h1 a {
 }
 .bypostauthor {
   overflow: hidden;
+}
+body.login div#login h1 a {
+  background-image: url("/wp-content/themes/derioolkrak/img/wp-login.png");
 }
 .webbird-call-to-action {
   position: relative;

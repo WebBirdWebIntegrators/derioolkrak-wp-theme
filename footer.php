@@ -78,7 +78,7 @@
 		<div class="cntr">
 			<ul>
 				<li class="intro">
-					<h3><img src="<?php echo get_template_directory_uri(); ?>/img/logo-de-rioolkrak-white.svg" alt="Nicko Service"></h3>
+					<h3><img src="<?php echo get_template_directory_uri(); ?>/img/logo-de-rioolkrak-white.svg" alt="De Rioolkrak"></h3>
 					<?php echo get_field('field_545c901a03dae', 'option'); ?>
 				</li>
 				<li class="aanbod">
