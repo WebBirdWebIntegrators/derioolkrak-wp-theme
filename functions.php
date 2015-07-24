@@ -122,6 +122,14 @@ function webbird_login_logo_url_title() {
 }
 add_filter( 'login_headertitle' , 'webbird_login_logo_url_title' );
 
+function wpse71451_enqueue_comment_reply() {
+    if ( get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+// Hook into comment_form_before
+add_action( 'comment_form_before', 'wpse71451_enqueue_comment_reply' );
+
 add_action('wp_enqueue_scripts' , 'webbird_scripts');
 
 function webbird_scripts() {

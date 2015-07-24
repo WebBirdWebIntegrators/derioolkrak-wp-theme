@@ -19,13 +19,13 @@
 							<?php the_post_thumbnail('large'); ?>
 						</div>
 					<?php endif; ?>
-					
+
 					<?php if ( get_field('wb_54fed95149291') ) : ?>
 						<div class="introduction">
 							<?php the_field('wb_54fed95149291'); ?>
 						</div>
 					<?php endif; ?>
-					
+
 					<?php the_content('<p>Read the rest of this page &raquo;</p>'); ?>
 					<?php wp_link_pages(array('before' => '<p>Pages: ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 					<?php get_template_part( 'templates-parts/acf-gallery' ) ?>
@@ -33,7 +33,6 @@
 				</div>
 				<?php endwhile; endif; ?>
 				<?php edit_post_link( __('Edit this entry', 'eagle') , '<div class="post-edit">', '</div>'); ?>
-				<?php paginate_comments_links() ?>
 			</div>
 			<?php if( get_field('field_552fb0b78c6c1') === 'disabled' ) { ?>
 			<?php } else { ?>
