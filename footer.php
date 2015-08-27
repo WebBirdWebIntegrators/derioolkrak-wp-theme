@@ -27,6 +27,11 @@
 						</div>
 					</div>
 					<div class="col2">
+						<div class="footer-sidebar-custom-code">
+							<?php if ( get_field('footer_sidebar_custom_code', 'option') ) {
+								echo get_field('footer_sidebar_custom_code', 'option');
+							} ?>
+						</div>
 						<div class="suppliers">
 							<?php if( have_rows('field_5511940926130') ) : ?>
 								<ul>
@@ -70,6 +75,7 @@
 								</ul>
 							<?php endif; ?>
 						</div>
+
 					</div>
 				</div>
 			</div>
