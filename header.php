@@ -57,6 +57,9 @@
 
 <body <?php body_class(); ?>>
 
+<!-- Open itemscope div -->
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+
 <div id="header">
 
 	<div class="hb1">
