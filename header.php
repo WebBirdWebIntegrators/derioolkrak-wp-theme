@@ -60,7 +60,8 @@
 	<!-- Start Custom Body Code -->
 	<?php if( get_field('wbts__custom_body_code__code') ) { ?>
 		<?php the_field('wbts__custom_body_code__code'); ?>
-	<?php } elseif( get_field('wbts__custom_body_code__code', 'option') ) { ?>
+	<?php } ?>
+	<?php if( get_field('wbts__custom_body_code__code', 'option') ) { ?>
 		<?php the_field('wbts__custom_body_code__code', 'option'); ?>
 	<?php } ?>
 	<!-- End Custom Body Code -->
