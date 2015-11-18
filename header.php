@@ -57,6 +57,14 @@
 
 <body <?php body_class(); ?>>
 
+	<!-- Start Custom Body Code -->
+	<?php if( get_field('wbts__custom_body_code__code') ) { ?>
+		<?php the_field('wbts__custom_body_code__code'); ?>
+	<?php } elseif( get_field('wbts__custom_body_code__code', 'option') ) { ?>
+		<?php the_field('wbts__custom_body_code__code', 'option'); ?>
+	<?php } ?>
+	<!-- End Custom Body Code -->
+
 <!-- Open itemscope div -->
 <div itemscope itemtype="http://schema.org/LocalBusiness">
 
@@ -105,13 +113,13 @@
 							<?php if (get_field('field_548edd668ebcb', 'option') == 'yes') { ?>
 								<?php if( get_field('field_545ceae654114','option') ): ?>
 									<li class="phone">
-										<a href="tel:<?php echo str_replace( ' ', '', get_field('field_545ceae654114','option') ) ?>" onclick="ga('send','event','contact','click','phone',0);"><?php _e('Bel', 'eagle') ?></a>
+										<a href="tel:<?php echo str_replace( ' ', '', get_field('field_545ceae654114','option') ) ?>" class="dynamic_number_cta_url" onclick="ga('send','event','contact','click','phone',0);"><?php _e('Bel', 'eagle') ?></a>
 									</li>
 								<?php endif; ?>
 							<?php } elseif (get_field('field_548edd668ebcb', 'option') == 'no') { ?>
 								<?php if( get_field('field_545c925d920fb','option') ): ?>
 									<li class="phone">
-										<a href="tel:<?php echo str_replace( ' ', '', get_field('field_545c925d920fb','option') ) ?>" onclick="ga('send','event','contact','click','phone',0);"><?php _e('Bel', 'eagle') ?></a>
+										<a href="tel:<?php echo str_replace( ' ', '', get_field('field_545c925d920fb','option') ) ?>" class="dynamic_number_cta_url" onclick="ga('send','event','contact','click','phone',0);"><?php _e('Bel', 'eagle') ?></a>
 									</li>
 								<?php endif; ?>
 							<?php } ?>
@@ -203,7 +211,7 @@
 						<i class="fa fa-envelope"></i><a href="mailto:<?php echo get_field('field_545c927a920fc', 'option'); ?>" onclick="ga('send','event','contact','click','email',0);"><?php echo get_field('field_545c927a920fc', 'option'); ?></a>
 					</li>
 					<li class="phone">
-						<i class="fa fa-phone"></i><a href="tel:<?php echo str_replace( ' ', '', get_field('field_545c925d920fb','option') ) ?>" onclick="ga('send','event','contact','click','phone',0);"><?php echo get_field('field_545c925d920fb', 'option'); ?></a>
+						<i class="fa fa-phone"></i><a href="tel:<?php echo str_replace( ' ', '', get_field('field_545c925d920fb','option') ) ?>" class="dynamic_number" onclick="ga('send','event','contact','click','phone',0);"><?php echo get_field('field_545c925d920fb', 'option'); ?></a>
 					</li>
 					<li class="menu-secondary">
 						<?php {
